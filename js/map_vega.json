@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Box Office Collections",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/world_map_dat.json.json",
+    "format": {"type": "topojson", "feature": "custom.geo"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/MAP_data.csv"
+        },
+        "key": "Market",
+        "fields": ["Gross", "Film_Title"]
+      }
+    },
+    {"filter": "datum.Film_Title == 'Zootopia'"}
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "detail": {"field": "Film_Title"},
+    "color": {
+      "field": "Gross",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {
+        "field": "Gross",
+        "type": "quantitative",
+        "title": "Log Normalised Gross"
+      },
+      {"field": "Film_Title", "type": "nominal", "title": "Film"}
+    ]
+  }
+}
