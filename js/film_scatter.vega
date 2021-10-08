@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Lifetime Gross of Films: 1977 to 2019",
+    "width": 600,
+    "height": 400,
+  "description": "Drag the sliders to highlight points.",
+  "transform": [{"calculate": "year(datum.Year)", "as": "Year"}],
+  "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/BOX_OFFICE_SUMMARY_data.csv"},
+  "layer": [{
+    "params": [{
+      "name": "Time",
+      "value":[{"Year": 2019}],
+      "select": {"type": "point", 
+                "fields": ["Year"]},        
+      "bind": {
+        "Year": {"input": "range", "min": 1977, "max": 2019, "step": 1}
+      }
+    }],
+    "mark": "circle",
+    "encoding": {
+      "x": {"field": "Budget", 
+              "type": "quantitative",
+              "scale": {
+                "domain":[0,400000000]
+              }},
+      "y": {"field": "Lifetime_Gross",
+            "title":"Lifetime Gross", 
+            "type": "quantitative",
+            "scale":{
+              "domain":[15000000,3000000000]
+            }},
+      "color":{
+          "condition": {"param": "Time"},
+          "value": "transparent"
+        }
+    }   
+  },{
+      "transform": [{"filter": {"param": "Time"}}],
+      "mark":"circle",
+      "encoding": {
+      "x": {"field": "Budget", 
+              "type": "quantitative",
+              "scale": {
+                "domain":[0,400000000]
+              }},
+      "y": {"field": "Lifetime_Gross",
+            "title":"Lifetime Gross", 
+            "type": "quantitative",
+            "scale":{
+              "domain":[15000000,3000000000]
+            }},
+      "size": {"field": "Run_Time_Min",
+                "title": "Film Length", 
+                "type": "quantitative",
+                "scale":{
+              "domain":[50,200]
+            }},
+      "tooltip": {"field": "Title"},
+      "color": {"field":"Audience_IMDB",
+                "title":"IMDb Rating",
+                "type": "quantitative",
+                "scale": {
+                  "range": ["red", "gold","green"]}}
+      }
+    }
+    
+
+]
+
+  }
