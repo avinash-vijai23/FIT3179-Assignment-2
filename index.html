@@ -11,18 +11,18 @@
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-    <title>Week 9 Homework</title>
+    <title>Week 10 Homework</title>
 
 </head>
 
 <body>
-    <h1>Week 9 Homework</h1>
+    <h1>Week 10 Homework</h1>
 
-    <div id="bo_map"></div>
+    <div id="bo_scatter"></div>
 
     <script type="text/javascript">
-        var spec2 = "js/map_vega.json";
-        vegaEmbed('#bo_map', spec2).then(function (result) {
+        var spec2 = "js/film_scatter.vega";
+        vegaEmbed('#bo_scatter', spec2).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
