@@ -15,7 +15,10 @@
       "bind": {
         "Year": {"input": "range", "min": 1977, "max": 2019, "step": 1}
       }
-    }],
+    },
+    {"name": "view",
+    "select": "interval",
+    "bind": "scales"}],
     "mark": "circle",
     "encoding": {
       "x": {"field": "Budget", 
@@ -53,9 +56,17 @@
                 "title": "Film Length", 
                 "type": "quantitative",
                 "scale":{
-              "domain":[50,200]
+                  "type": "log",
+              "domain":[60,200]
             }},
-      "tooltip": {"field": "Title"},
+      "tooltip": [{"field": "Title"},
+                  {"field": "Lifetime_Gross",
+                  "title":"Lifetime Gross"},
+                  {"field": "Budget"},
+                  {"field": "Run_Time_Min",
+                  "title": "Film Length (Minutes)"},
+                  {"field": "Audience_IMDB",
+                  "title":"IMDb Rating"}],
       "color": {"field":"Audience_IMDB",
                 "title":"IMDb Rating",
                 "type": "quantitative",
