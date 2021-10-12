@@ -31,8 +31,18 @@
     <div id="bo_map"></div>
 
     <script type="text/javascript">
-        var spec2 = "js/map_vega.json";
+        var spec2 = "js/map_vega.vega";
         vegaEmbed('#bo_map', spec2).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+    </script>
+   
+   <div id="bo_castcrew"></div>
+   
+       <script type="text/javascript">
+        var spec2 = "js/castcrew_bar.vega";
+        vegaEmbed('#bo_castcrew', spec2).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
