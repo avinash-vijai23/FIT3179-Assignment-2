@@ -1,0 +1,208 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Highest grossing film of the 2010s",
+  "data": {
+    "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/world_map_dat.json.json",
+    "format": {"type": "topojson", "feature": "custom.geo"}
+  },
+  "vconcat": [{
+    "title": "2010s - Avengers: Endgame (2019)",
+    "width": 400,
+    "height": 200, 
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Endgame_map.csv"},
+        "key": "Market",
+        "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+      }
+    }],
+  "layer":[{
+    "params": [{
+      "name":"Film"
+    }],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "detail": {"field": "Film_Title"},
+    "color": {
+      "field": "Gross",
+      "type": "quantitative",
+      "scale": {"type":"log",
+                "range":["darkred","yellow","darkgreen"]}
+    },
+    "tooltip": [
+      {"field": "Film_Title", "type": "nominal", "title": "Film"},
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {
+        "field": "Gross",
+        "type": "quantitative",
+        "title": "Box Office Gross USD"
+      },
+      {"field": "Ticket_prices_2014", "type": "nominal", "title": "Ticket Prices USD(2014)"}
+    ]
+  }}]
+},
+{
+  "title": "2000s - Avatar (2009)",
+  "width": 400,
+  "height": 200, 
+"transform": [
+  {
+    "lookup": "properties.name",
+    "from": {
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Avatar_map.csv"},
+      "key": "Market",
+      "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+    }
+  }],
+"layer":[{
+  "params": [{
+    "name":"Film"
+  }],
+"projection": {"type": "equirectangular"},
+"mark": {"type": "geoshape"},
+"encoding": {
+  "detail": {"field": "Film_Title"},
+  "color": {
+    "field": "Gross",
+    "type": "quantitative",
+    "scale": {"type":"log",
+              "range":["darkred","yellow","darkgreen"]}
+  },
+  "tooltip": [
+    {"field": "Film_Title", "type": "nominal", "title": "Film"},
+    {"field": "properties.name", "type": "nominal", "title": "Country"},
+    {
+      "field": "Gross",
+      "type": "quantitative",
+      "title": "Box Office Gross USD"
+    },
+    {"field": "Ticket_prices_2014", "type": "nominal", "title": "Ticket Prices USD(2014)"}
+  ]
+}}]
+},
+{
+  "title": "1990s - Titanic (1997)",
+  "width": 400,
+  "height": 200, 
+"transform": [
+  {
+    "lookup": "properties.name",
+    "from": {
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Titanic_map.csv"},
+      "key": "Market",
+      "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+    }
+  }],
+"layer":[{
+  "params": [{
+    "name":"Film"
+  }],
+"projection": {"type": "equirectangular"},
+"mark": {"type": "geoshape"},
+"encoding": {
+  "detail": {"field": "Film_Title"},
+  "color": {
+    "field": "Gross",
+    "type": "quantitative",
+    "scale": {"type":"log",
+              "range":["darkred","yellow","darkgreen"]}
+  },
+  "tooltip": [
+    {"field": "Film_Title", "type": "nominal", "title": "Film"},
+    {"field": "properties.name", "type": "nominal", "title": "Country"},
+    {
+      "field": "Gross",
+      "type": "quantitative",
+      "title": "Box Office Gross USD"
+    },
+    {"field": "Ticket_prices_2014", "type": "nominal", "title": "Ticket Prices USD(2014)"}
+  ]
+}}]
+},
+{
+  "title": "1980s - E.T. the Extra-Terrestrial(1982)",
+  "width": 400,
+  "height": 200, 
+"transform": [
+  {
+    "lookup": "properties.name",
+    "from": {
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/ET_map.csv"},
+      "key": "Market",
+      "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+    }
+  }],
+"layer":[{
+  "params": [{
+    "name":"Film"
+  }],
+"projection": {"type": "equirectangular"},
+"mark": {"type": "geoshape"},
+"encoding": {
+  "detail": {"field": "Film_Title"},
+  "color": {
+    "field": "Gross",
+    "type": "quantitative",
+    "scale": {"type":"log",
+              "range":["darkred","yellow","darkgreen"]}
+  },
+  "tooltip": [
+    {"field": "Film_Title", "type": "nominal", "title": "Film"},
+    {"field": "properties.name", "type": "nominal", "title": "Country"},
+    {
+      "field": "Gross",
+      "type": "quantitative",
+      "title": "Box Office Gross USD"
+    },
+    {"field": "Ticket_prices_2014", "type": "nominal", "title": "Ticket Prices USD(2014)"}
+  ]
+}}]
+},
+{
+  "title": "1970s -Star Wars (1977)",
+  "width": 400,
+  "height": 200, 
+"transform": [
+  {
+    "lookup": "properties.name",
+    "from": {
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/StarWars_map.csv"},
+      "key": "Market",
+      "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+    }
+  }],
+"layer":[{
+  "params": [{
+    "name":"Film"
+  },
+  {"name": "view",
+  "select": "interval",
+  "bind": "scales"}],
+"projection": {"type": "equirectangular"},
+"mark": {"type": "geoshape"},
+"encoding": {
+  "detail": {"field": "Film_Title"},
+  "color": {
+    "field": "Gross",
+    "type": "quantitative",
+    "scale": {"type":"log",
+              "range":["darkred","yellow","darkgreen"]}
+  },
+  "tooltip": [
+    {"field": "Film_Title", "type": "nominal", "title": "Film"},
+    {"field": "properties.name", "type": "nominal", "title": "Country"},
+    {
+      "field": "Gross",
+      "type": "quantitative",
+      "title": "Box Office Gross USD"
+    },
+    {"field": "Ticket_prices_2014", "type": "nominal", "title": "Ticket Prices USD(2014)"}
+  ]
+}}]
+}
+
+]
+}
