@@ -13,7 +13,7 @@
       "select": {"type": "point", 
                 "fields": ["Year"]},        
       "bind": {
-        "Year": {"input": "range", "min": 1977, "max": 2019, "step": 1}
+        "Year": {"input": "range", "min": 1972, "max": 2019, "step": 1}
       }
     },
     {"name": "view",
@@ -71,7 +71,8 @@
                 "title":"IMDb Rating",
                 "type": "quantitative",
                 "scale": {
-                  "range": ["red", "gold","green"]}}
+                  "range": ["red", "gold","green"],
+                  "domain":[4,9]}}
       }
     }
     
