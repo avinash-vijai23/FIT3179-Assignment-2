@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Cast and Crew of the Highest Grossing Films of All Time",
-  "description": "Drag the sliders to highlight points.",
-  "hconcat": [{ 
+  "description": "Drag the sliders to highlight points.", 
   "transform": [{"filter": "datum['Role'] != null"}],
   "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/CAST_CREW_data.csv"},
   "layer": [{
@@ -15,24 +14,23 @@
       "bind": {"input": "select", "options": ["Director", "Producer", "Composer", "Cinematographer", "Editor", "Actor"]}
     }
     ],
-    "transform": [{"filter": {"param": "CastCrew"}}],
+    "transform": [
+    {"filter": {"param": "CastCrew"}}],
     "mark": "bar",
     "encoding": {
       "y": {"field": "Member_Name", 
               "type": "nominal",
-              "axis": {"minExtent": 1, "title": null},
+              "axis": {"minExtent": 100, "title": null},
                "sort": "-x"},
       "x": {"field": "Gross",
             "title":"Overall Collection", 
             "type": "quantitative"
             },
-      "color": {"field":"Classification",
-                "title":"Classification (Target Audience)",
+      "color": {"field":"Distributor",
                 "type": "nominal",
                 "scale":{
-                  "domain": ["G", "PG", "M", "MA15+", "R18+"],
-                  "range": ["green", "gold", "turquoise", "red", "black"]
-
+                  "domain":["Walt Disney", "Twentieth Century Fox", "DreamWorks", "Lionsgate", "New Line Cinema", "Paramount Pictures", "Miramax","Sony Pictures ", "Universal", "Warner Bros.", "Other"],
+                  "range":["#488f31","#70a343","#95b757","#b9cb6d","#dde086","#fed47f","#fbb268","#f68f5a","#ed6a57","#de425b", "#fff4a0"]
                 }
                 },
       "tooltip": [{"field": "Film_Title",
@@ -41,10 +39,11 @@
                 "title":"Lifetime Gross"},
                 {"field": "Classification"},
                 {"field": "IMDB",
-                "title":"IMDb Rating"}]
-    }   
+                "title":"IMDb Rating"},
+                {"field": "Distributor"}]
+    }
+       
   }  
 
 ]  
-}]
 }
