@@ -53,7 +53,7 @@
               "domain":[15000000,3000000000]
             }},
       "size": {"field": "Run_Time_Min",
-                "title": "Film Length", 
+                "title": "Film Length (Min)", 
                 "type": "quantitative",
                 "scale":{
                   "type": "log",
