@@ -115,24 +115,24 @@
   </div> <!-- end page -->
    
 <script type="text/javascript">
-  var vis1 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/collection_map.json";
-  var vis2 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/scatter_films.json";
-  var vis3 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/castcrew_bar.json";
-  var vis4 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/market_pie.json";
+  var specVis1 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/collection_map.json";
+  var specVis2 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/scatter_films.json";
+  var specVis3 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/castcrew_bar.json";
+  var specVis4 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/json/market_pie.json";
 
-  vegaEmbed('#decade_map', vis1, {"actions": false}).then(function(result) {
+  vegaEmbed('#decade_map', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  vegaEmbed('#scatter_plot', vis2, {"actions": false}).then(function(result) {
+  vegaEmbed('#scatter_plot', specVis2, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#bar_chart', vis3, {"actions": false}).then(function(result) {
+  vegaEmbed('#bar_chart', specVis3, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#pie_chart', vis4, {"actions": false}).then(function(result) {
+  vegaEmbed('#pie_chart', specVis4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 		
