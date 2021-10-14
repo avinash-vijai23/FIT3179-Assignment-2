@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/CAST_CREW_data.csv"
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "Gross", "type": "quantitative"},
+    "color": {
+      "field": "Distributor",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Walt Disney",
+          "Warner Bros.",
+          "Sony Pictures ",
+          "Universal",
+          "Twentieth Century Fox",
+          "Paramount Pictures",
+          "Lionsgate",
+          "New Line Cinema",
+          "DreamWorks",
+          "Miramax",
+          "Other"
+        ],
+        "range": [
+          "#ff0000",
+          "#fc8d35",
+          "#fbd08e",
+          "#dad07e",
+          "#a5b83c",
+          "#84ad13",
+          "#568f10",
+          "#ffe792",
+          "#ffd451",
+          "#fee3a8",
+          "#f1f1f1"
+        ]
+      }
+    },
+    "tooltip": {"field": "Distributor"}
+  },
+  "config": {}
+}
