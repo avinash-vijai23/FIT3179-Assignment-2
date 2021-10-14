@@ -1,49 +1,105 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Cast and Crew of the Highest Grossing Films of All Time",
-  "description": "Drag the sliders to highlight points.", 
+  "description": "Drag the sliders to highlight points.",
   "transform": [{"filter": "datum['Role'] != null"}],
-  "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/CAST_CREW_data.csv"},
-  "layer": [{
-    "params": [{
-      "name": "CastCrew",
-      "value":[{"Role": "Director"}],
-      "select":{"type":"point",
-                "fields": ["Role"]
-      },        
-      "bind": {"input": "select", "options": ["Director", "Producer", "Composer", "Cinematographer", "Editor", "Actor"]}
-    }
-    ],
-    "transform": [
-    {"filter": {"param": "CastCrew"}}],
-    "mark": "bar",
-    "encoding": {
-      "y": {"field": "Member_Name", 
+  "data": {
+    "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/CAST_CREW_data.csv"
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "CastCrew",
+          "value": [{"Role": "Director"}],
+          "select": {"type": "point", "fields": ["Role"]},
+          "bind": {
+            "input": "select",
+            "options": [
+              "Director",
+              "Producer",
+              "Composer",
+              "Cinematographer",
+              "Editor",
+              "Actor"
+            ]
+          }
+        }
+      ],    
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Member_Name",
+          "type": "nominal",
+          "axis": {"minExtent": 100, "title": null},
+          "sort": "-x"
+        },
+        "x": {
+          "field": "Gross",
+          "title": "Overall Collection",
+          "type": "quantitative"
+        },
+    "color": {"field": "Distributor", 
               "type": "nominal",
-              "axis": {"minExtent": 100, "title": null},
-               "sort": "-x"},
-      "x": {"field": "Gross",
-            "title":"Overall Collection", 
-            "type": "quantitative"
+              "scale": {
+              "domain": [
+                "Walt Disney",
+                "Warner Bros.",
+                "Sony Pictures ",
+                "Universal",
+                "Twentieth Century Fox",
+                "Paramount Pictures",
+                "Lionsgate",
+                "New Line Cinema",
+                "DreamWorks",
+                "Miramax",
+                "Other"
+              ],
+              "range": [
+                "#ff0000",
+                "#fc8d35",
+                "#fbd08e",
+                "#dad07e",
+                "#a5b83c",
+                "#84ad13",
+                "#568f10",
+                "#ffe792",
+                "#ffd451",
+                "#fee3a8",
+                "#f1f1f1"
+              ]
+        }},
+        "tooltip": [
+          {"field": "Film_Title", "title": "Title"},
+          {"field": "Gross", "title": "Lifetime Gross"},
+          {"field": "Classification"},
+          {"field": "IMDB", "title": "IMDb Rating"},
+          {"field": "Distributor"}
+        ]
+      },
+      "transform": [
+         {"filter": {"param": "CastCrew"}},
+                  {
+            "joinaggregate": [{
+                "op": "sum",
+                "field": "Gross",
+                "as": "gross_sum"
             },
-      "color": {"field":"Distributor",
-                "type": "nominal",
-                "scale":{
-                  "domain":["Walt Disney", "Twentieth Century Fox", "DreamWorks", "Lionsgate", "New Line Cinema", "Paramount Pictures", "Miramax","Sony Pictures ", "Universal", "Warner Bros.", "Other"],
-                  "range":["#488f31","#70a343","#95b757","#b9cb6d","#dde086","#fed47f","#fbb268","#f68f5a","#ed6a57","#de425b", "#fff4a0"]
-                }
-                },
-      "tooltip": [{"field": "Film_Title",
-                    "title": "Title"},
-                {"field": "Gross",
-                "title":"Lifetime Gross"},
-                {"field": "Classification"},
-                {"field": "IMDB",
-                "title":"IMDb Rating"},
-                {"field": "Distributor"}]
+            {
+                "op": "distinct",
+                "field": "Member_Name",
+                "as": "member"
+            }],
+            "groupby": [
+                "Member_Name"
+            ]
+         },
+         {
+      "window": [{"op": "row_number", "field": "", "as": "member_rank"}],
+      "sort": [{"field": "gross_sum", "order": "descending"}]
+    },
+    {"filter": "datum.member_rank < 200"}
+      ]  
     }
-       
-  }  
-
-]  
+  ]
 }

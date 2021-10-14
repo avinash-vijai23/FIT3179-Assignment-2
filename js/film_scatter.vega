@@ -57,7 +57,7 @@
                 "type": "quantitative",
                 "scale":{
                   "type": "log",
-              "domain":[60,200]
+              "domain":[50,140,200]
             }},
       "tooltip": [{"field": "Title"},
                   {"field": "Lifetime_Gross",
@@ -71,7 +71,7 @@
                 "title":"IMDb Rating",
                 "type": "quantitative",
                 "scale": {
-                  "range": ["red", "gold","green"],
+                  "range": ["#ff0000", "#ffe064","#1fc745"],
                   "domain":[5,8]}}
       }
     }

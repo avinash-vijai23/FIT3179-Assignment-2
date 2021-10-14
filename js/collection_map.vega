@@ -6,14 +6,14 @@
     "format": {"type": "topojson", "feature": "custom.geo"}
   },
   "vconcat": [{
-    "title": "2010s - Avengers: Endgame (2019)",
+    "title": "1970s - Star Wars (1977)",
     "width": 400,
     "height": 200, 
   "transform": [
     {
       "lookup": "properties.name",
       "from": {
-        "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Endgame_map.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/StarWars_map.csv"},
         "key": "Market",
         "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
       }
@@ -44,7 +44,7 @@
         "field": "Gross",
         "type": "quantitative",
         "scale": {"type":"log",
-                  "range":["darkred","yellow","darkgreen"]}
+                  "range":["#ffffea","#fff4a0","#71c464","#30ba58"]}
       },
       "tooltip": [
         {"field": "Film_Title", "type": "nominal", "title": "Film"},
@@ -59,14 +59,14 @@
     }}]
 },
 {
-  "title": "2000s - Avatar (2009)",
+  "title": "1980s - E.T. the Extra-Terrestrial (1982)",
   "width": 400,
   "height": 200, 
 "transform": [
   {
     "lookup": "properties.name",
     "from": {
-      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Avatar_map.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/ET_map.csv"},
       "key": "Market",
       "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
     }
@@ -165,14 +165,14 @@
   }}]
 },
 {
-  "title": "1980s - E.T. the Extra-Terrestrial(1982)",
+  "title": "2000s - Avatar (2009)",
   "width": 400,
   "height": 200, 
 "transform": [
   {
     "lookup": "properties.name",
     "from": {
-      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/ET_map.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Avatar_map.csv"},
       "key": "Market",
       "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
     }
@@ -218,18 +218,18 @@
   }}]
 },
 {
-  "title": "1970s -Star Wars (1977)",
+  "title": "2010s - Avengers: Endgame (2019)",
   "width": 400,
   "height": 200, 
 "transform": [
-  {
-    "lookup": "properties.name",
-    "from": {
-      "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/StarWars_map.csv"},
-      "key": "Market",
-      "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
-    }
-  }],
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {"url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/Endgame_map.csv"},
+        "key": "Market",
+        "fields": ["Gross", "Film_Title", "Ticket_prices_2014"]
+      }
+    }],
 "layer":[{
   "transform": [
     {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
