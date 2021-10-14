@@ -1,53 +1,143 @@
-   
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+  <title>Top 1000 Films of All Time</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
 
-
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-    <title>FIT3179 Data Visualisation Assignment 2: Top 1000 Highest Grossing Films of All Time</title>
-
+  <!-- custom style -->
+  <style>
+    *{
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    h1{
+      font-weight: 1600;
+      font-size: 50px;
+    }
+     body{
+       background-color: lemonchiffon;
+     }
+     .page{
+       width: 1000px;    
+       background-color: white;   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1{
+      margin-top:0px;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        font-size: 12px;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>FIT3179 Data Visualisation Assignment 2: Top 1000 Highest Grossing Films of All Time</h1>
 
-    <div id="bo_scatter"></div>
+ <div class="page">
 
-    <script type="text/javascript">
-        var spec2 = "js/film_scatter.vega";
-        vegaEmbed('#bo_scatter', spec2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 style="text-align:center;color:#006400">TOP 1000 FILMS OF ALL TIME (1972-2019)</h1>
+        <p>This data explores the highest grossing films at the box office from the year 1972 all the way to 2019. Film has been an important form of entertainment for many individuals and this data will be exploring the change of audiences tastes and recurring trends in regards to cast,crew and audience appeal of all the highest grossing films releases in this time frame. 
+           Note: This data does not include 2020-2021 re-releases or new releases.</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
 
-    </script>
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
+            <h2 style="text-align:center">Top Grossing Films of Each Decade</h2>
+            <p>This visualisation explores the and compares the highest grossing films of each decade across a 5-decade period. It allows is to see the change in audience taste in terms of genre, the distribution and wide-releases of the movie increases from decade to decade. </p>
+          </div>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="#decade_map" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Top Films of Each Year</h2>
+            <p>Here we get a larger scope that shows all the data on a year-to-year basis, scrolling the selection parameter will allow you to explore the releases in each year, hovering over the visualisation will allow you to see attributes of the film that was released during the period. The importance of audience criticism and overall quality of the film has been reflected the IMDb rating which an industry standard used to measure the critical success of a film.</p>
+            <h3>Accommodation Type Overall Split</h3>
+            <div id="#scatter_plot"  class="vis-container"></div>
+          </div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+         <div class="pure-u-2-3">
+             <div id="#bar_chart"  class="vis-container"></div>
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>Cast and Crew of the Highest Grossing Films</h2>
+          <p>The bar chart here demonstrates the top technicians and actors in the industry that have contributed to the overall performance of films at the box office. The level of top-tier differs for each field as there is a high variety of directors that create the films, however the usage of composers is limited and is repeated quite often. Thus the number of members in each selection differs to represent the contribute to the overall films.</p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="#pie_chart"  class="vis-container"></div>
+      </div>
+    
+    </div>
+    <!-- end pure grid group -->
+
+
+  </div> <!-- end page -->
    
-    <div id="bo_map"></div>
+<script type="text/javascript">
+  var vis1 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/js/collection_map.vega";
+  var vis2 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/js/film_scatter.vega";
+  var vis3 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/js/castcrew_bar.vega";
+  var vis4 = "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/js/distributor_pie.vega";
 
-    <script type="text/javascript">
-        var spec2 = "js/collection_map.vega";
-        vegaEmbed('#bo_map', spec2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+  vegaEmbed('#decade_map', vis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#scatter_plot', vis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
 
-    </script>
-   
-   <div id="bo_castcrew"></div>
-   
-   <script type="text/javascript">
-       var spec2 = "js/castcrew_bar.vega";
-       vegaEmbed('#bo_castcrew', spec2).then(function (result) {
-           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-       }).catch(console.error);
+  vegaEmbed('#bar_chart', vis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
 
-   </script>
+  vegaEmbed('#pie_chart', vis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+		
 
+</script>
 </body>
-
 </html>
+
