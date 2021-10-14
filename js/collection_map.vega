@@ -5,7 +5,7 @@
     "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/world_map_dat.json.json",
     "format": {"type": "topojson", "feature": "custom.geo"}
   },
-  "vconcat": [{
+  "hconcat": [{
     "title": "1970s - Star Wars (1977)",
     "width": 400,
     "height": 200, 
