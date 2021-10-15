@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Lifetime Gross of Films: 1972 to 2019",
   "width": 600,
   "height": 400,
   "description": "Drag the sliders to highlight points.",
