@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Cast and Crew of the Highest Grossing Films of All Time",
   "description": "Drag the sliders to highlight points.",
   "transform": [{"filter": "datum['Role'] != null"}],
   "data": {
