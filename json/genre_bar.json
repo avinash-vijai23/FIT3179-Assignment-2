@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "600",
+  "length": "400",
+  "description": "Drag the sliders to highlight points.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/GENRE_data.csv"
+  },
+  "encoding": {
+    "y": {"field": "Genre", "type": "nominal", "sort": "-x", "title": null},
+    "x": {"field": "Gross", "type": "quantitative", "title": null}
+  },
+  "layer": [
+    {"mark": "bar", "encoding": {"color": {"value": "#8bb67a"}}},
+    {
+      "mark": {"type": "text", "align": "left", "xOffset": 9, "aria": false},
+      "encoding": {
+        "text": {"field": "Highest_Grossing_Film", "type": "nominal"},
+        "color": {
+          "condition": {"test": {"field": "count", "gt": 10}, "value": "white"},
+          "value": "black"
+        }
+      }
+    }
+  ],
+  "config": {"mark": {"invalid": null}}
+}
