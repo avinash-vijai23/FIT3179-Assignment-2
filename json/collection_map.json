@@ -5,10 +5,10 @@
     "url": "https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/data/world_map_dat.json.json",
     "format": {"type": "topojson", "feature": "custom.geo"}
   },
-  "hconcat": [
+  "vconcat": [
     {
       "title": "1970s - Star Wars (1977)",
-      "width": 500,
+      "width": 400,
       "height": 200,
       "transform": [
         {
@@ -74,7 +74,7 @@
     },
     {
       "title": "1980s - E.T. the Extra-Terrestrial (1982)",
-      "width": 500,
+      "width": 400,
       "height": 200,
       "transform": [
         {
@@ -140,7 +140,7 @@
     },
     {
       "title": "1990s - Titanic (1997)",
-      "width": 500,
+      "width": 400,
       "height": 200,
       "transform": [
         {
@@ -206,7 +206,7 @@
     },
     {
       "title": "2000s - Avatar (2009)",
-      "width": 500,
+      "width": 400,
       "height": 200,
       "transform": [
         {
@@ -272,7 +272,7 @@
     },
     {
       "title": "2010s - Avengers: Endgame (2019)",
-      "width": 500,
+      "width": 400,
       "height": 200,
       "transform": [
         {
@@ -339,3 +339,4 @@
   ],
   "config": {}
 }
+
