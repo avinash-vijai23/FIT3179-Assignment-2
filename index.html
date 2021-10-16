@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html>
 <head>
   <title>Top 1000 Films of All Time</title>
@@ -15,139 +15,75 @@
 
   <!-- custom style -->
   <style>
-body {
-  background-color: white;
-}
 
-.header-container {
-  display: flex;
-  justify-content: center;
-}
-
-img {
-  width: 40%;
-  height: 40%;
-}
-.header {
-  text-align: center;
-  font-size: large;
-  color: black;
-  width: 100%;
-  height: 276.2px;
-  position: relative;
-}
-
-.line {
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(0deg, rgb(5, 2, 34) 0%, rgb(13, 13, 73) 50%);
-}
-
-.title {
-  position: absolute;
-  font-size: xx-large;
-  padding: 0px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.subtitle {
-  font-size: medium;
-  font-style: italic;
-  position: absolute;
-  padding: 0px;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.contents {
-  background-color: white;
-  width: 40%;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 40px;
-}
-
-.footer {
-  background: rgb(32, 32, 41);
-  text-align: center;
-  color: white;
-  line-height: 1.15em;
-}
-
-h2, h3, h4 {
-  padding: 0px;
-  margin: 0px;
-}
-
-p{
-  margin: 0px;
-  padding-bottom: 20px;
-}
-
-.content-2, .content-3, .content-4, .content-5 {
-  padding-bottom: 20px;
-}
-
-.red {
-  color: red;
-  background: none;
-}
-
-.blue {
-  color: blue;
-  background: none;
-}
-
-p, h1, h2, h3, h4, .footer {
-  font-family: 'Work Sans', sans-serif;
-}
-
-h4 {
-  font-size: large;
-}
-
-.description h2, h1{
-      margin-top:0px;
+*{
+        font-family: 'Courier New';
+        color:rgb(0, 0, 0);
+       
+    }
+    h1{
+      font-weight: 1200;
+      text-align: center;
+    }
+    h2{
+        font-family: 'Courier New';
     }
 
+    p{font-weight: 400;}
+   
+    body{
+        background-color: #ffffff;
+      }
+     
+     .page{
+       width: 950px;    
+       background-color: rgb(255, 255, 255);   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1{
+      margin-top:0px;
+    }
     .description-right {
-    padding: 10px;
-}
+      padding: 10px;
+    }
+    .description-left{
+      padding: 10px;
+    }
+    .pure-g{
+      margin-bottom: 50px;
+    }
+    .pure-u-1-1.small-font p{
+      
 
-.description-left{
-    padding: 10px;
-}
+        font-family: 'Courier New';
 
-.pure-g{
-    margin-bottom: 50px;
-}
+        font-weight: 20;
+    }
+    .pure-u-1-1 h1{
 
-.pure-u-1-1.small-font p{
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-weight: 200;
-}
-
-.pure-u-1-1 h1{
-        font-size: 24px;
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
+        font-family: 'Courier New';
        
     }
     .pure-u-1-1 p{
        
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Courier New';
         text-align: center;
-        font-weight: 200;
+        font-weight: 20;
         
     }
+    .line {
+    width: 110%;
+    height: 5px;
+    background: linear-gradient(0deg, rgb(5, 2, 34) 0%, rgb(13, 13, 73) 50%);
+    }
+    img {
+   width: 108px;
+   height: 108px;}
   </style>
 
 </head>
@@ -156,39 +92,38 @@ h4 {
  <div class="page">
 
    <!-- pure grid group -->
-   <body>
-    <div class="container">
-      <div class = "header-container">​
-        <div class="header">
-          <h1 class = "title">Top 1000 Films of All Time</h1>
-          <h6 class = "subtitle", style="text-align: left;">A deeper look at the highest grossing films of all time and an analysis of the change in trends on and audience taste throughout time. The data will look at all films released between 1972 and 2019 as well as the casts and crews that were incolved with the production and distribution of films. Critical responses frome audiences will also be assessed and evaluated in the form of IMDb ratings.</h6>
-          <h6 class = "subtitle", style="text-align: left;">The main dataset can be found from <a href="
-            https://www.kaggle.com/saivamshi/collections-of-top-grossing-movies?select=movie_crew_data.csv
-            ">Kaggle</a></h6>
-          <h4 class = "title", style="text-align: right;">by Avinash Vijaikumar</h4>
+
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h1><span style="font-size: 36px;">Top 1000 Films of All Time</h1></span></h1>
+          <p style="font-size: 14px; text-align: left ">A deeper look at the highest grossing films of all time and an analysis of the change in trends on and audience taste throughout time. The data will look at all films released between 1972 and 2019 as well as the casts and crews that were incolved with the production and distribution of films. Critical responses frome audiences will also be assessed and evaluated in the form of IMDb ratings.</p>
+        <div class="pure-u-1-3">
+            <p style="font-size: 14px; text-align: left ">The main dataset can be found from <a href="
+                https://www.kaggle.com/saivamshi/collections-of-top-grossing-movies?select=movie_crew_data.csv
+                ">Kaggle</a></p></span>    
         </div>
-        <div class="line">
+        <div class = "line">    
       </div>
 
 
       <div class="pure-g">
         <div class="pure-u-2-3">
+            <h2>Top Films of Each Decade (1970s- 2010s)</h2>
           <div id="decade_map" class="vis-container"></div>
         </div>
         <div class="pure-u-1-3">
             <div class="description description-right dot_map_desc">
-              <h2>Top Films of Each Decade (1970s- 2010s)</h2>
-          <p This visualisation is a small time lapse that shows the change in tastes and trends of the worldwide film-going audience ></p>
+          <p style="font-size: 12px; text-align: left "> This visualisation is a small time lapse that shows the change in tastes and trends of the worldwide film-going audience </p>
           <img src="https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/images/starwars.jpg" > 
-          <p> <a href="https://www.imdb.com/title/tt0076759/">Star Wars</a> is considered the first modern blockbuster. It spawned a billion dollar franchise that went on to break many box office of record. The films comes under the Sci-Fi Fantasy genre and was one of the earliest movies of the genre to have a huge culture impact</p>
+          <p style="font-size: 12px; text-align: left "> <a href="https://www.imdb.com/title/tt0076759/">Star Wars</a> is considered the first modern blockbuster. It spawned a billion dollar franchise that went on to break many box office of record. The films comes under the Sci-Fi Fantasy genre and was one of the earliest movies of the genre to have a huge culture impact</p>
           <img src="https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/images/et.jpg" >
-          <p> <a href="https://www.imdb.com/title/tt0083866/?ref_=nv_sr_srsg_0">E.T. the Extra-Terrestrial</a> was another film with a huge culture impact, directed by Steven Speilberg. It was a Sci-fi Coming-of-age drama which represents a period where films based around children had huge box office success. Following Jaws this was one of the films that solidified Speilberg's influence in the industry.</p>
+          <p style="font-size: 12px; text-align: left "> <a href="https://www.imdb.com/title/tt0083866/?ref_=nv_sr_srsg_0">E.T. the Extra-Terrestrial</a> was another film with a huge culture impact, directed by Steven Speilberg. It was a Sci-fi Coming-of-age drama which represents a period where films based around children had huge box office success. Following Jaws this was one of the films that solidified Speilberg's influence in the industry.</p>
           <img src="https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/images/titanic.jpg" >
-          <p> <a href="https://www.imdb.com/title/tt0076759/">Titanic</a> was a radical departure from the previous films which were based around a Sci-fi plot, this film was a historical-disaster film directed by James Cameron which centered around a young romance. The film went on to win Best Picture at Academy Awards and also proved that critically acclaimed films can also be successful at the box office. </p>      
+          <p style="font-size: 12px; text-align: left "> <a href="https://www.imdb.com/title/tt0076759/">Titanic</a> was a radical departure from the previous films which were based around a Sci-fi plot, this film was a historical-disaster film directed by James Cameron which centered around a young romance. The film went on to win Best Picture at Academy Awards and also proved that critically acclaimed films can also be successful at the box office. </p>      
           <img src="https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/images/avatar.jpg" >
-          <p> Another film by James Cameron, <a href="https://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_3">Avatar</a> is seen as a huge technincal achievement in filmmaking with regards to its use of CGI. It once again signalled the return of the dominance of Sci-fi films at the world box office. </p>      
+          <p style="font-size: 12px; text-align: left "> Another film by James Cameron, <a href="https://www.imdb.com/title/tt0499549/?ref_=fn_al_tt_3">Avatar</a> is seen as a huge technincal achievement in filmmaking with regards to its use of CGI. It once again signalled the return of the dominance of Sci-fi films at the world box office. </p>      
           <img src="https://raw.githubusercontent.com/avinash-vijai23/FIT3179-Assignment-2/main/images/avengers.jpg" >
-          <p> The 2010s saw the dominance of superhero comic-book based films. <a href="https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0">Avengers: Endgame</a> represented the culmination of 10 years worth of character development and is the first sequel to make an appearance of the list of the highest grossing films in each decade. It is also worth noting that over the course of 10 years the Marvel films have outgrossed 60 years worth of James Bond films and 50 years worth of Star Wars films which is seen as a huge acheivement. </p>      
+          <p style="font-size: 12px; text-align: left "> The 2010s saw the dominance of superhero comic-book based films. <a href="https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0">Avengers: Endgame</a> represented the culmination of 10 years worth of character development and is the first sequel to make an appearance of the list of the highest grossing films in each decade. It is also worth noting that over the course of 10 years the Marvel films have outgrossed 60 years worth of James Bond films and 50 years worth of Star Wars films which is seen as a huge acheivement. </p>      
         </p>
         </div>
         
@@ -198,9 +133,9 @@ h4 {
 
     <!-- pure grid group -->
     <div class= "pure-g">
-        <div class="pure-u-5-5">
+        <div class="pure-u-2-3">
             <h2>Budget vs Total Worldwide Gross</h2>
-            <p style="font-weight: 200;"> This graph allows us to see the overall gross of the film across the world against the films budget as well an indication of the films run time (in minutes) and a representation of the film's IMDb rating to show the critical success (scroll zoom is enabled to take a closer look at the films).</p>
+            <p style= "text-align: left; font-size: 18px"> This graph allows us to see the overall gross of the film across the world against the films budget as well an indication of the films run time (in minutes) and a representation of the film's IMDb rating to show the critical success (scroll zoom is enabled to take a closer look at the films).</p>
 		    <div id="scatter_plot"  class="vis-container"></div>
           </div>
         </div>
@@ -212,7 +147,7 @@ h4 {
     <div class="pure-g">
          <div class="pure-u-2-3">
             <h2>Cast and Crew of the Highest Grossing Films</h2>
-            <p>The bar chart here demonstrates the top technicians and actors in the industry that have contributed to the overall performance of films at the box office. The level of top-tier differs for each field as there is a high variety of directors that create the films, however the usage of composers is limited and is repeated quite often. Thus the number of members in each selection differs to represent the contribution to the overall films.</p>
+            <p style="font-size: 18px; ">The bar chart here demonstrates the top technicians and actors in the industry that have contributed to the overall performance of films at the box office. The level of top-tier differs for each field as there is a high variety of directors that create the films, however the usage of composers is limited and is repeated quite often. Thus the number of members in each selection differs to represent the contribution to the overall films.</p>
             </div>
         <div class="pure-u-1-3", style="align-items: left">
                 <div id="pie_chart"  class="vis-container" style="align-items: right">
@@ -228,6 +163,8 @@ h4 {
         <div class="pure-u-2-3">
             <div id="bar_chart"  class="vis-container">
             </div>
+        </div>
+        <div class = "line"> 
         </div>
 
 
